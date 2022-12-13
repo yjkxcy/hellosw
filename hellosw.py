@@ -2,7 +2,6 @@ import logging
 import logging.handlers
 import hashlib
 import time
-import os
 import sys
 import pandas as pd
 from functools import wraps
@@ -45,7 +44,6 @@ def fileMd5(filename):
 			if not data:
 				break
 			fmd5.update(data)
-	# logger.debug(fmd5.hexdigest())
 	logger.debug(f"文件 {Path(filename).name} 的MD5码: {fmd5.hexdigest()}")
 	return fmd5.hexdigest()
 
